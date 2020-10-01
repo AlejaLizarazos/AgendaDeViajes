@@ -1,12 +1,17 @@
 #include "milibreria.h"
-#define CAT 30
+#define CAT 10
+#define CI 20
+#define PE 3
+#define MES 10
+#define RU 100
+#define URL 1000
 void crear_registro(){
 	char categoria[CAT];
-	char ciudad[25];
-	char pendiente[2];
-	char mes[24];
-	char ruta[100];
-	char url[1000];
+	char ciudad[CI];
+	char pendiente[PE];
+	char mes[MES];
+	char ruta[RU];
+	char url[URL];
 
 	int opcion;
 	int i=1;
@@ -24,11 +29,11 @@ void crear_registro(){
                        	i=0;
 			break;
                 case 2: 
-                        strcat(categoria,"cultura");
+                        strncpy(&categoria[0],"comida",CAT-1);
                         i=0;
 			break;
                 case 3: 
-                        strcat(categoria,"lugares");
+                        strncpy(&categoria[0],"comida",CAT-1);
                         i=0;
 			break;
 		default:
