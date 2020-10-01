@@ -28,7 +28,7 @@ void consultar_registro(){
 			printf("Ingrese la categoria\n");
 			scanf("%s",categoria);
 			system("clear");
-                       	snprintf(&db_statement[0], MAX_DB_STATEMENT_BUFFER_LENGTH-1, "SELECT ciudad,mes,pendiente FROM viajes WHERE categoria=('%s')",ciudad);
+                       	snprintf(&db_statement[0], MAX_DB_STATEMENT_BUFFER_LENGTH-1, "SELECT ciudad,mes,pendiente FROM viajes WHERE categoria=('%s')",categoria);
 			db_result = PQexec (conn, &db_statement[0]);
 			if (PQresultStatus(db_result) == PGRES_TUPLES_OK)
 				{
@@ -39,7 +39,7 @@ void consultar_registro(){
             			printf ("+-----------+------------+\n");
   				if (num_rows == 0)
   					{
-    					printf ("database is empty\n");
+    					printf ("No existe ese registro en la base de datos\n");
   					}
   				else
   					{
@@ -73,7 +73,7 @@ void consultar_registro(){
                                         {
                                         for (row = 0; row < num_rows; row++){
 					{
-                                                printf ("%s\t \t  %s\t %s\t\n", PQgetvalue (db_result, row, 0), PQgetvalue (db_result, row, 1), PQgetvalue (db_result, row, 2));
+                                                printf ("%s\t  %s\t %s\n", PQgetvalue (db_result, row, 0), PQgetvalue (db_result, row, 1), PQgetvalue (db_result, row, 2));
                                                 }
                                         }
                                 PQclear (db_result);
@@ -84,7 +84,7 @@ void consultar_registro(){
                         break;
                 case 3:
 			printf("Ingrese el mes\n");
-			scanf("%s",categoria);
+			scanf("%s",mes);
 			system("clear");
                        	snprintf(&db_statement[0], MAX_DB_STATEMENT_BUFFER_LENGTH-1, "SELECT categoria,ciudad,pendiente FROM viajes WHERE mes=('%s')",mes);
 			db_result = PQexec (conn, &db_statement[0]);
@@ -103,7 +103,7 @@ void consultar_registro(){
   					{
     					for (row = 0; row < num_rows; row++)
     						{
-      						printf ("%s\t \t  %s\t\t %s\t\n", PQgetvalue (db_result, row, 0), PQgetvalue (db_result, row, 1), PQgetvalue (db_result, row, 2));
+      						printf ("%s  %s %s\n", PQgetvalue (db_result, row, 0), PQgetvalue (db_result, row, 1), PQgetvalue (db_result, row, 2));
     						}
   					}
   				PQclear (db_result);

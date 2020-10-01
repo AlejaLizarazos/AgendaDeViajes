@@ -7,7 +7,7 @@ int main(){
 
         printf("Bienvenido a tus agenda de viajes, escoja una opcion:\n");
 	while (i==1) {
-		printf("1.Crear un nuevo registro\n2.Consultar viajes especificos\n3.Visualizar imagen\n4.Check\n5.Salir\n "); 
+		printf("1.Crear un nuevo registro\n2.Consultar viajes especificos\n3.Visualizar imagen\n4.Actualizar Viaje\n5.Salir\n "); 
         	scanf("%d",&opcion);
         	switch(opcion)
         	{

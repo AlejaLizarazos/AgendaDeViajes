@@ -26,13 +26,14 @@ void crear_conexion(char *cat,char *ci,char *m,char *r,char *p){
         	PQfinish(conn);
         	exit(1);
     	}
-	
+
 	snprintf(&db_statement[0],MAX_DB_STATEMENT_BUFFER_LENGTH-1,"INSERT INTO viajes (categoria,ciudad,mes,ruta,pendiente) VALUES ('%s', '%s','%s','%s','%s')", cat, ci,m,r,p);
+
 	PGresult *res = PQexec(conn,&db_statement[0]);
 	if (PQresultStatus(res) != PGRES_COMMAND_OK) {
 		do_exit(conn,res);
 	}
 	printf("Registro realizado con exito\n");
-	printf("%s",cat);
+	
 	PQclear(res);
 }
