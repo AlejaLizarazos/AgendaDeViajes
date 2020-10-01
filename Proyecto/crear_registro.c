@@ -1,19 +1,6 @@
 #include "milibreria.h"
-#define CAT 10
-#define CI 20
-#define PE 3
-#define MES 10
-#define RU 100
-#define URL 1000
-void crear_registro(){
-	char categoria[CAT];
-	char ciudad[CI];
-	char pendiente[PE];
-	char mes[MES];
-	char ruta[RU];
-	char url[URL];
 
-	int opcion;
+void crear_registro(){
 	int i=1;
 	system("clear");
 	printf("Seleccione una categoria:\n");	

@@ -1,5 +1,4 @@
 #include "milibreria.h"
-#define MAX_DB_STATEMENT_BUFFER_LENGTH 5000
 
 
 char db_statement[MAX_DB_STATEMENT_BUFFER_LENGTH];

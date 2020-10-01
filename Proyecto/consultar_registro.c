@@ -1,20 +1,12 @@
 #include "milibreria.h"
-#define MAX_DB_STATEMENT_BUFFER_LENGTH 5000
-char db_statement[MAX_DB_STATEMENT_BUFFER_LENGTH];
+
+
 PGresult *db_result;
 PGconn   *db_connection;
-int row, num_rows;
 
 void consultar_registro(){
 	PGconn *conn = PQconnectdb("user=postgres password=admin dbname=viajes");
-
-	int opcion;
-        int i = 1;
-	char categoria[10];
-	char ciudad[20];
-	char mes[20];
-	char pendiente[3];
-
+	int i=1;
         system("clear");
 
         printf("Ingrese el dato que quiere filtrar:\n");
